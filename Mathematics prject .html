@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triple Integration Volume</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="Mathematics project.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Multivariable Calculus</p> 
+        <h1 class="h1"> Calculate Volume <br> Visualize Real Graph</h1>
+        <p class="hero-text">Enter the coordinate ranges to compute volume, render a 3D model, and display an attractive line graph.</p>
+      </div>
+      <img class="hero-image" src="Images/ChatGPT Image May 10, 2026, 05_50_39 PM.png" alt="Math visualization" />
+    </header>
+
+    <main class="main-grid">
+      <section class="panel panel-calculator">
+        <div class="panel-header">
+          <h2 class="panel-title">Volume Calculator</h2>
+          <span class="panel-badge">Step 1</span>
+        </div>
+        <div class="box">
+          <div class="field-group">
+            <label class="field-label" for="x1">X range</label>
+            <div class="field-row">
+              <input id="x1" type="number" placeholder="Start">
+              <input id="x2" type="number" placeholder="End">
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="y1">Y range</label>
+            <div class="field-row">
+              <input id="y1" type="number" placeholder="Start">
+              <input id="y2" type="number" placeholder="End">
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="z1">Z range</label>
+            <div class="field-row">
+              <input id="z1" type="number" placeholder="Start">
+              <input id="z2" type="number" placeholder="End">
+            </div>
+          </div>
+          <button class="primary-button" onclick="calculate()">Calculate Volume</button>
+          <div id="result" class="result"></div>
+        </div>
+      </section>
+
+      <section class="panel panel-3d">
+        <div class="panel-header">
+          <h2 class="panel-title">3D Volume Preview</h2>
+          <span class="panel-badge panel-badge-secondary">Step 2</span>
+        </div>
+        <div id="graph3d" class="graph3d"></div>
+      </section>
+
+      <section class="panel panel-chart">
+        <div class="panel-header">
+          <h2 class="panel-title">Coordinate Line Graph</h2>
+          <span class="panel-badge panel-badge-secondary">Step 3</span>
+        </div>
+        <div class="graph-row">
+          <div id="graph" class="graph"></div>
+          <div class="thumbnail-card">
+            <div class="thumbnail-header">Visualization</div>
+            <div id="viz-thumb" class="viz-thumb">
+              <div class="viz-empty">Enter values to update visualization</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="Mathematics project.js"></script>
+  <script src="graph.js"></script>
+  <script src="threegraph.js"></script>
+</body>
+</html>
